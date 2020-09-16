@@ -1,0 +1,27 @@
+<div class="container">
+  <div>
+    <h1>Rate my tasty cakes</h1>
+
+    <form (submit)="new_cake_submit()">
+      <label>Baker Name:</label>
+      <input type="text" name="baker" [(ngModel)]="new_cake.baker"/>
+      <label for="">Picure URL:</label>
+      <input type="url" name="picture" [(ngModel)]="new_cake.picture">
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+  <div class="scroll">
+    <ul *ngFor='let i of all_cakes[0]'>
+      <li><img class="image_all_cakes" (click)='show_cake(i._id)' src="{{i.picture}}" alt=""></li>
+      <li><app-cake-reactions [i]="i"></app-cake-reactions></li>
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+<app-cake-details *ngIf="show_cake_details" [cake_to_show]="cake_to_show" [avg_rating]="avg_rating"></app-cake-details>
+
+<router-outlet></router-outlet>

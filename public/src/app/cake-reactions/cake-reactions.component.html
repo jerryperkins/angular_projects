@@ -1,0 +1,16 @@
+
+<button (click)='delete_task(i._id)'>Delete Task</button>
+<form (submit)="new_reaction_submit(i._id)">
+    <label for="">Rating: </label>
+    <select name="rating" [(ngModel)]="new_reaction.rating">
+        <option value="1">1 Star</option>
+        <option value="2">2 Stars</option>
+        <option value="3">3 Stars</option>
+        <option value="4">4 Stars</option>
+        <option value="5">5 Stars</option>
+    </select>
+    <label for="">Comment</label>
+    <input type="text" name="comment" value="Type comment here" [(ngModel)]="new_reaction.comment">
+    <input type="submit" value="Rate!">
+</form>
+

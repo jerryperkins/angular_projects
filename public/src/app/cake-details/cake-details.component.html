@@ -1,0 +1,10 @@
+<ul>
+    <li>Baked by: {{cake_to_show.baker}}</li>
+    <li>The average rating: {{avg_rating}}</li>
+    <li><img src="{{cake_to_show.picture}}" ></li>
+    <li *ngFor="let j of cake_to_show.comment">{{j.comment}}
+        <p>{{j.rating}} Star</p>
+        
+    </li>
+    
+</ul>
